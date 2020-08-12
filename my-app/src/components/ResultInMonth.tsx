@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, TextField, Typography, Grid } from '@material-ui/core';
+import { Typography, Grid, Container } from '@material-ui/core';
 
 export const ResultInMonth = () => {
   let withoutTax = 40000;
@@ -7,32 +7,20 @@ export const ResultInMonth = () => {
   let inMonth = 45400;
     
   return (
-    <div className="resultInMonth">
-      <Box borderColor="red">
-        <div>
-          <Grid container spacing={0}>
-            <Grid item xs={6}>
-              <Typography variant="body1" gutterBottom>{withoutTax}</Typography>  
-            </Grid>
-            <Grid item xs={6}>
-              <Typography variant="body1" gutterBottom>сотрудник будет получать на руки</Typography>
-            </Grid>
-            <Grid item xs={6}>
-              <Typography variant="body1" gutterBottom>{tax}</Typography>  
-            </Grid>
-            <Grid item xs={6}>
-              <Typography variant="body1" gutterBottom>НДФЛ 13% от оклада</Typography>     
-            </Grid>
-            <Grid item xs={6}>
-              <Typography variant="body1" gutterBottom>{inMonth}</Typography> 
-            </Grid>
-            <Grid item xs={6}>
-              <Typography variant="body1" gutterBottom>за сотрудника в месяц</Typography>  
-            </Grid>
-          </Grid>        
-        </div>  
-      </Box>
-    </div>
+    <Typography component="div" style={{ backgroundColor: '#fbf4db'}}>
+      <div>      
+        <Typography component="span">{withoutTax}</Typography>
+        <Typography component="span"> сотрудник будет получать на руки</Typography>
+      </div>
+      <div>      
+        <Typography component="span">{tax}</Typography>
+        <Typography component="span"> НДФЛ 13% от оклада</Typography>
+      </div>
+      <div>      
+        <Typography component="span">{inMonth}</Typography>
+        <Typography component="span"> за сотрудника в месяц</Typography>
+      </div>
+    </Typography>      
   );
 }
 
